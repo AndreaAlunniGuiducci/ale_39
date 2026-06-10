@@ -13,24 +13,24 @@ interface MemoryGameProps {
 }
 
 const initialCards = [
-  { id: 1, value: "🎅", isFlipped: false, isMatched: false },
-  { id: 2, value: "🎅", isFlipped: false, isMatched: false },
-  { id: 3, value: "🌟", isFlipped: false, isMatched: false },
-  { id: 4, value: "🌟", isFlipped: false, isMatched: false },
-  { id: 5, value: "❄️", isFlipped: false, isMatched: false },
-  { id: 6, value: "❄️", isFlipped: false, isMatched: false },
-  { id: 7, value: "🎁", isFlipped: false, isMatched: false },
-  { id: 8, value: "🎁", isFlipped: false, isMatched: false },
-  { id: 9, value: "⛄", isFlipped: false, isMatched: false },
-  { id: 10, value: "⛄", isFlipped: false, isMatched: false },
-  { id: 11, value: "🦌", isFlipped: false, isMatched: false },
-  { id: 12, value: "🦌", isFlipped: false, isMatched: false },
+  { id: 1, value: "🎂", isFlipped: false, isMatched: false },
+  { id: 2, value: "🎂", isFlipped: false, isMatched: false },
+  { id: 3, value: "🎈", isFlipped: false, isMatched: false },
+  { id: 4, value: "🎈", isFlipped: false, isMatched: false },
+  { id: 5, value: "🎁", isFlipped: false, isMatched: false },
+  { id: 6, value: "🎁", isFlipped: false, isMatched: false },
+  { id: 7, value: "🎉", isFlipped: false, isMatched: false },
+  { id: 8, value: "🎉", isFlipped: false, isMatched: false },
+  { id: 9, value: "🥳", isFlipped: false, isMatched: false },
+  { id: 10, value: "🥳", isFlipped: false, isMatched: false },
+  { id: 11, value: "🍰", isFlipped: false, isMatched: false },
+  { id: 12, value: "🍰", isFlipped: false, isMatched: false },
   { id: 13, value: "🕯️", isFlipped: false, isMatched: false },
   { id: 14, value: "🕯️", isFlipped: false, isMatched: false },
-  { id: 15, value: "🍪", isFlipped: false, isMatched: false },
-  { id: 16, value: "🍪", isFlipped: false, isMatched: false },
-  { id: 17, value: "🎇", isFlipped: false, isMatched: false },
-  { id: 18, value: "🎇", isFlipped: false, isMatched: false },
+  { id: 15, value: "🎊", isFlipped: false, isMatched: false },
+  { id: 16, value: "🎊", isFlipped: false, isMatched: false },
+  { id: 17, value: "🎀", isFlipped: false, isMatched: false },
+  { id: 18, value: "🎀", isFlipped: false, isMatched: false },
   { id: 19, value: "🍾", isFlipped: false, isMatched: false },
   { id: 20, value: "🍾", isFlipped: false, isMatched: false },
 ];
@@ -131,7 +131,7 @@ const MemoryGame: React.FC<MemoryGameProps> = ({ onGameStatusChange }) => {
               onClick={() => handleCardClick(card)}
             >
               <div className="card-inner">
-                <div className="card-front">🎄</div>
+                <div className="card-front">🎂</div>
                 <div className="card-back">{card.value}</div>
               </div>
             </div>
@@ -142,11 +142,8 @@ const MemoryGame: React.FC<MemoryGameProps> = ({ onGameStatusChange }) => {
         <div>
           <h1>Complimenti!</h1>
           <p>
-            Hai completato il gioco della memoria con successo! Sei davvero una
-            campionessa! 🎉
+            Hai completato il gioco con successo! Nonostante i 39 hai ancora una buona memoria! 🎉
           </p>
-          <p>Ti auguro un Natale magico pieno di gioia e felicità amore mio.</p>
-          <button onClick={newGame}>Gioca di nuovo</button>
         </div>
       )}
       {winGame === false && (
@@ -154,11 +151,10 @@ const MemoryGame: React.FC<MemoryGameProps> = ({ onGameStatusChange }) => {
           <h1>Non è andata!</h1>
           <p>
             Hai esaurito le mosse a disposizione. Ma non preoccuparti, puoi
-            sempre riprovare! 🎄
+            sempre riprovare!
           </p>
           <p>
-            Non perdere la speranza, il Natale è il momento perfetto per nuovi
-            inizi. Riprova e vincerai!
+            Non perdere la speranza, è il tuo compleanno e come regalo hai tentativi infiniti
           </p>
           <button onClick={newGame}>Gioca di nuovo</button>
         </div>

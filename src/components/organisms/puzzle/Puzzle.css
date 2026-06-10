@@ -1,5 +1,5 @@
 /* Mobile first: stili base pensati per schermi piccoli */
-.memory-game {
+.puzzle-game {
   text-align: center;
   margin: 0 auto;
   padding: 20px 14px 24px;
@@ -13,7 +13,7 @@
   border: 2px dashed #ffb3d1;
 }
 
-.memory-game h2 {
+.puzzle-game h2 {
   margin: 0 0 6px;
   font-size: 1.35rem;
   font-weight: 800;
@@ -21,15 +21,11 @@
   letter-spacing: 0.5px;
 }
 
-.memory-game h2::before {
-  content: "🎂 ";
+.puzzle-game h2::before {
+  content: "🧩 ";
 }
 
-.memory-game h2::after {
-  content: " 🎈";
-}
-
-.memory-game > p {
+.puzzle-game > p {
   margin: 0 0 16px;
   display: inline-block;
   padding: 6px 16px;
@@ -41,61 +37,46 @@
   box-shadow: 0 4px 12px rgba(255, 154, 60, 0.4);
 }
 
-.cards-container {
+.puzzle-board {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  justify-content: center;
+  gap: 0;
   width: 100%;
-}
-
-.card {
-  aspect-ratio: 1 / 1;
-  perspective: 1000px;
-  cursor: pointer;
-}
-
-.card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
-  transform-style: preserve-3d;
-}
-
-.card.flipped .card-inner {
-  transform: rotateY(180deg);
-}
-
-.card-front,
-.card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-  border-radius: 14px;
-  box-shadow: 0 5px 12px rgba(214, 51, 132, 0.18);
-}
-
-.card-front {
-  background: linear-gradient(135deg, #ff6fb5, #ff9a3c);
-  color: #fff;
-  border: 2px solid #ffffff;
-}
-
-.card-back {
+  max-width: 300px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
   background: #fff;
-  border: 2px solid #ffd0e4;
-  transform: rotateY(180deg);
+  box-shadow: 0 8px 20px rgba(214, 51, 132, 0.22);
 }
 
-.memory-game button {
-  margin-top: 16px;
+.puzzle-tile {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  display: block;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  cursor: pointer;
+  position: relative;
+  transition: box-shadow 0.15s ease;
+}
+
+.puzzle-tile.selected {
+  box-shadow: inset 0 0 0 3px #d6336c;
+  z-index: 1;
+}
+
+.puzzle-hint {
+  margin: 14px 0 0;
+  font-size: 0.85rem;
+  color: #884466;
+}
+
+.puzzle-game button:not(.puzzle-tile) {
+  margin-top: 14px;
   padding: 12px 26px;
   font-size: 1rem;
   font-weight: 700;
@@ -108,58 +89,79 @@
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.memory-game button:active {
+.puzzle-game button:not(.puzzle-tile):active {
   transform: translateY(1px);
 }
 
-.memory-game h1 {
+.puzzle-win h1 {
   font-size: 1.5rem;
   color: #d6336c;
   margin: 8px 0;
 }
 
-/* Tablet e oltre: più respiro, hover ed effetti */
+.puzzle-win p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #884466;
+  margin: 12px 0 0;
+}
+
+.puzzle-preview {
+  width: 100%;
+  max-width: 240px;
+  border-radius: 16px;
+  border: 3px solid #ffd86b;
+  box-shadow: 0 10px 24px rgba(214, 51, 132, 0.25);
+}
+
+/* Tablet e oltre: più respiro ed effetti hover */
 @media (min-width: 600px) {
-  .memory-game {
+  .puzzle-game {
     padding: 28px 24px 32px;
     border-radius: 24px;
     box-shadow: 0 18px 45px rgba(214, 51, 132, 0.18);
   }
 
-  .memory-game h2 {
+  .puzzle-game h2 {
     font-size: 1.7rem;
   }
 
-  .memory-game > p {
+  .puzzle-game > p {
     margin-bottom: 20px;
     font-size: 0.95rem;
   }
 
-  .cards-container {
-    gap: 12px;
-    max-width: 360px;
+  .puzzle-board {
+    max-width: 340px;
   }
 
-  .card-front,
-  .card-back {
-    font-size: 1.9rem;
-    border-radius: 16px;
+  .puzzle-tile:hover {
+    box-shadow: inset 0 0 0 3px rgba(214, 51, 132, 0.5);
+    z-index: 1;
   }
 
-  .card:hover .card-inner {
-    transform: translateY(-3px);
+  .puzzle-tile.selected:hover {
+    box-shadow: inset 0 0 0 3px #d6336c;
   }
 
-  .card.flipped:hover .card-inner {
-    transform: rotateY(180deg);
+  .puzzle-hint {
+    font-size: 0.9rem;
   }
 
-  .memory-game button:hover {
+  .puzzle-game button:not(.puzzle-tile):hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 24px rgba(214, 51, 132, 0.45);
   }
 
-  .memory-game h1 {
+  .puzzle-win h1 {
     font-size: 1.8rem;
+  }
+
+  .puzzle-win p {
+    font-size: 1.05rem;
+  }
+
+  .puzzle-preview {
+    max-width: 280px;
   }
 }

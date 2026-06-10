@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MemoryGame from "../../components/organisms/memoryGame";
 import { routes } from "../../utils/routes";
+import "./level_1.css";
 
 const Level_1 = () => {
   const [gameFinished, setGameFinished] = useState(false);
