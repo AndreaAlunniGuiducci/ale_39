@@ -16,8 +16,8 @@ const Level_2 = () => {
     setGameFinished(true);
   };
 
-  const handleHome = () => {
-    navigate(routes.home);
+  const handleNextLevel = () => {
+    navigate(routes.level_3);
   };
 
   return (
@@ -39,9 +39,9 @@ const Level_2 = () => {
           <h2>Hai completato il puzzle!</h2>
           <p>
             Complimenti, hai ricomposto l'immagine e superato anche il secondo
-            livello. Buon 39° compleanno!
+            livello. Pronta per l'ultimo?
           </p>
-          <button onClick={handleHome}>Torna alla home</button>
+          <button onClick={handleNextLevel}>Vai al livello 3</button>
         </section>
       )}
     </div>

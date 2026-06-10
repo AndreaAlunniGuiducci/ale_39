@@ -1,0 +1,196 @@
+/* Mobile first: stili base pensati per schermi piccoli */
+.timeline-game {
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px 14px 24px;
+  width: 100%;
+  max-width: 460px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(214, 51, 132, 0.18);
+  border: 2px dashed #ffb3d1;
+}
+
+.timeline-game h2 {
+  margin: 0 0 6px;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #d6336c;
+  letter-spacing: 0.5px;
+}
+
+.timeline-game h2::before {
+  content: "⏳ ";
+}
+
+.timeline-game > p {
+  margin: 0 0 16px;
+  font-size: 0.9rem;
+  color: #884466;
+}
+
+.timeline-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: linear-gradient(135deg, #ffe0ef, #fff3d6);
+  border: 2px solid #ffd0e4;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(214, 51, 132, 0.12);
+  text-align: left;
+}
+
+.timeline-index,
+.timeline-year {
+  flex: 0 0 auto;
+  min-width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff6fb5, #d6336c);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+.timeline-label {
+  flex: 1 1 auto;
+  font-weight: 600;
+  color: #5a2a4a;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.timeline-emoji {
+  font-size: 1.2rem;
+}
+
+.timeline-controls {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.timeline-move {
+  width: 30px;
+  height: 26px;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  background: #fff;
+  color: #d6336c;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(214, 51, 132, 0.2);
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+
+.timeline-move:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.timeline-move:not(:disabled):active {
+  transform: scale(0.9);
+}
+
+.timeline-feedback {
+  margin: 14px 0 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #d6336c;
+}
+
+.timeline-list.solved .timeline-item {
+  border-color: #ffd86b;
+}
+
+.timeline-game button:not(.timeline-move) {
+  margin-top: 16px;
+  padding: 12px 26px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #ff6fb5, #d6336c);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(214, 51, 132, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.timeline-game button:not(.timeline-move):active {
+  transform: translateY(1px);
+}
+
+.timeline-win h1 {
+  font-size: 1.5rem;
+  color: #d6336c;
+  margin: 8px 0 16px;
+}
+
+.timeline-win p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #884466;
+  margin: 16px 0 0;
+}
+
+/* Tablet e oltre: più respiro ed effetti hover */
+@media (min-width: 600px) {
+  .timeline-game {
+    padding: 28px 24px 32px;
+    border-radius: 24px;
+    box-shadow: 0 18px 45px rgba(214, 51, 132, 0.18);
+  }
+
+  .timeline-game h2 {
+    font-size: 1.7rem;
+  }
+
+  .timeline-game > p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  .timeline-label {
+    font-size: 1.05rem;
+  }
+
+  .timeline-move:not(:disabled):hover {
+    background: #ffe0ef;
+    transform: translateY(-1px);
+  }
+
+  .timeline-game button:not(.timeline-move):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(214, 51, 132, 0.45);
+  }
+
+  .timeline-win h1 {
+    font-size: 1.8rem;
+  }
+
+  .timeline-win p {
+    font-size: 1.05rem;
+  }
+}
