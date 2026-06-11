@@ -26,10 +26,10 @@ const Level_1 = () => {
   return (
     <div className="level-1-page">
       <header>
-        <h1>Primo livello: gioco della memoria</h1>
+        <h1>Livello 1: gioco della memoria</h1>
         <p>
-          Questo è il primo livello del gioco creato per il 39° compleanno della tua ragazza.
-          Scopri le coppie prima di esaurire le mosse.
+          A 39 anni la memoria a breve termine inizia a fare qualche scherzetto... 😏
+          Testiamola: scopri tutte le coppie prima di esaurire le mosse!
         </p>
       </header>
 

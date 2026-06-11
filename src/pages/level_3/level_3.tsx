@@ -16,17 +16,18 @@ const Level_3 = () => {
     setGameFinished(true);
   };
 
-  const handleHome = () => {
-    navigate(routes.home);
+  const handleNextLevel = () => {
+    navigate(routes.level_4);
   };
 
   return (
     <div className="level-3-page">
       <header>
-        <h1>Terzo livello: la linea del tempo</h1>
+        <h1>Livello 3: la linea del tempo</h1>
         <p>
-          Ultimo livello! Rimetti i 5 eventi nell'ordine giusto, dal più vecchio
-          al più recente.
+          La memoria a breve termine l'abbiamo testata... ma con 39 anni di
+          ricordi, com'è messa quella a lungo termine? 🧠 Rimetti i 5 eventi
+          nell'ordine giusto, dal più vecchio al più recente!
         </p>
       </header>
 
@@ -36,12 +37,13 @@ const Level_3 = () => {
 
       {gameFinished && (
         <section className="level-3-completed">
-          <h2>Hai completato il gioco!</h2>
+          <h2>Memoria di ferro!</h2>
           <p>
-            Hai superato tutti e tre i livelli e ricostruito la nostra linea del
-            tempo. Buon 39° compleanno, amore mio!
+            Hai ricostruito la nostra linea del tempo senza un'esitazione. Ma il
+            gioco non è finito: ci sono ancora i tuoi riflessi da mettere alla
+            prova!
           </p>
-          <button onClick={handleHome}>Torna alla home</button>
+          <button onClick={handleNextLevel}>Vai al livello 4</button>
         </section>
       )}
     </div>

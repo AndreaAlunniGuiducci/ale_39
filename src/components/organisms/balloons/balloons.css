@@ -1,0 +1,175 @@
+/* Mobile first: stili base pensati per schermi piccoli */
+.balloons-game {
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px 14px 24px;
+  width: 100%;
+  max-width: 460px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(214, 51, 132, 0.18);
+  border: 2px dashed #ffb3d1;
+}
+
+.balloons-game h2 {
+  margin: 0 0 6px;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #d6336c;
+  letter-spacing: 0.5px;
+}
+
+.balloons-game h2::before {
+  content: "🎈 ";
+}
+
+.balloons-intro {
+  margin: 0 0 16px;
+  font-size: 0.95rem;
+  color: #884466;
+}
+
+.balloons-hud {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 0 12px;
+}
+
+.balloons-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffd86b, #ff9a3c);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(255, 154, 60, 0.4);
+}
+
+.balloons-badge.time {
+  background: linear-gradient(135deg, #ff6fb5, #d6336c);
+  box-shadow: 0 4px 12px rgba(214, 51, 132, 0.4);
+}
+
+.balloons-field {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #ffe0ef, #fff3d6);
+  box-shadow: inset 0 2px 10px rgba(214, 51, 132, 0.12);
+}
+
+.balloon {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-size: 2.4rem;
+  line-height: 1;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  animation: balloon-pop-in 0.18s ease-out;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.balloon:active {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+@keyframes balloon-pop-in {
+  from {
+    transform: translate(-50%, -50%) scale(0.3);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.balloons-result h1 {
+  font-size: 1.5rem;
+  color: #d6336c;
+  margin: 8px 0;
+}
+
+.balloons-result p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #884466;
+  margin: 12px 0 0;
+}
+
+.balloons-game button {
+  margin-top: 16px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #ff6fb5, #d6336c);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(214, 51, 132, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.balloons-game button:active {
+  transform: translateY(1px);
+}
+
+/* Tablet e oltre: campo più ampio ed effetti hover */
+@media (min-width: 600px) {
+  .balloons-game {
+    padding: 28px 24px 32px;
+    border-radius: 24px;
+    box-shadow: 0 18px 45px rgba(214, 51, 132, 0.18);
+  }
+
+  .balloons-game h2 {
+    font-size: 1.7rem;
+  }
+
+  .balloons-intro {
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+  }
+
+  .balloons-badge {
+    font-size: 0.95rem;
+  }
+
+  .balloons-field {
+    height: 400px;
+  }
+
+  .balloon {
+    width: 58px;
+    height: 58px;
+    font-size: 2.7rem;
+  }
+
+  .balloon:hover {
+    transform: translate(-50%, -50%) scale(1.12);
+  }
+
+  .balloons-result h1 {
+    font-size: 1.8rem;
+  }
+
+  .balloons-result p {
+    font-size: 1.05rem;
+  }
+
+  .balloons-game button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(214, 51, 132, 0.45);
+  }
+}

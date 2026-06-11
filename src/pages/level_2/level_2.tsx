@@ -23,10 +23,10 @@ const Level_2 = () => {
   return (
     <div className="level-2-page">
       <header>
-        <h1>Secondo livello: il puzzle</h1>
+        <h1>Livello 2: il puzzle</h1>
         <p>
-          Ben fatto! In questo livello devi ricomporre l'immagine scambiando le
-          tessere. Rimetti insieme tutti i pezzi!
+          Dicono che dopo i 39 la vista cali un pochino... 👀 Mettiamola alla
+          prova: ricomponi l'immagine scambiando le tessere!
         </p>
       </header>
 
